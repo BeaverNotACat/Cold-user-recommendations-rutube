@@ -1,0 +1,36 @@
+version: "2.29.1"
+name: cold-user
+
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build: ./backend
+    environment:
+      - POSTGRES_HOST=localhost:5432
+      - POSTGRES_DB=database
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - database
+    ports:
+      - 8000:8000
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+
+  database:
+    container_name: database
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=database
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - 5432:5432

@@ -4,7 +4,7 @@ import { generateRequest, parseResponse } from './../utils/handlerData'
 import Post from './post';
 import HotUser from './hotUser';
 
-const PAGES = 1
+const PAGES = 100
 
 
 const Body = () => {

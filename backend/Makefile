@@ -19,7 +19,7 @@ format:
 	rye run black src/
 
 run:
-	fastapi run src/app.py --host 0.0.0.0 --port 51863
+	fastapi run src/app.py --host 0.0.0.0 --port 8000
 
 run-dev:
 	rye run fastapi dev src/app.py

@@ -1,4 +1,4 @@
-const LINK = "https://petstore.swagger.io/v2/store/order";
+const LINK = "http://localhost:8000/predict";
 
 export function generateRequest(fpHash, data){
     var reactions = Array(0)
@@ -11,28 +11,27 @@ export function generateRequest(fpHash, data){
         });
     }
 
-
-    var body = JSON.stringify({
+    console.log(JSON.stringify({
         "userId": fpHash,
         "reactions": reactions
-      })
-    console.log(body)
+      }))
+
     return new Request(LINK, {
         method: "POST",
         headers: {
             'Content-Type': "application/json"
         },
         body: JSON.stringify({
-            "id": 0,
-            "petId": 0,
-            "quantity": 0,
-            "shipDate": "2024-09-28T10:27:58.131Z",
-            "status": "placed",
-            "complete": true
-          }),
+            "userId": fpHash,
+            "reactions": reactions
+          })
       });
 }
 
 export function parseResponse(obj){
-    return new Map([["2", "3"], ["20", "30"], ["21", "31"], ["234", "33"], ["254", "354"], ["276", "367"]])
+    let result = new Map();
+    Object.entries(obj).forEach((value) => {
+        result.set(value[1].videoId, [value[1].name, value[1].description])
+    })
+    return result;
 }

@@ -44,12 +44,13 @@ const Post = ({ id, value, clicked, click }) => {
         <div className="card bg-base-100 w-96 shadow-xl post">
             <figure>
                 <img
-                src="/mock.png"
-                alt="video logo" />
+                    src="/mock.png"
+                    alt="react logo" 
+                />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{value}</h2>
-                <p>описание</p>
+                <h2 className="card-title">{value[0]}</h2>
+                <p>{value}</p>
                 <div className="card-actions justify-end">
 
                 <ErrorButton click={click} id={id} clicked={clicked}/>

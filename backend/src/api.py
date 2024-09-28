@@ -17,4 +17,3 @@ async def healthcheck(reactions: RecommendInput):
             "description": "Ох уж этот мистер джонсон. Опят всё перепутал" 
         } for _ in range(10)
     ]
-
