@@ -1,0 +1,42 @@
+
+
+.white-text {
+    color: #ffffff;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post {
+    padding: auto;
+    margin: 50px;
+    width: auto;
+    background-color: #14191f;
+    box-shadow: -2px -2px 4px 4px rgb(28, 28, 30);
+}
+
+.clicked-error-button {
+    /* ff5861 */
+    background-color: #3b1517;
+    border: 1px solid #3b1517;
+}
+
+.clicked-access-button {
+    /* 00a96e */
+    background-color: #013c28;
+    border: 1px solid #013c28;
+}
+
+.btn-submit-outer {
+    width: 100%;
+    padding-bottom: 5vh;
+}
+
+.btn-submit-inner {
+    margin: auto;
+    display:block;
+}

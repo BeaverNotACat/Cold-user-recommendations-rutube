@@ -1,0 +1,16 @@
+.end-outer {
+    width: 100vw;
+    height: 80vh;
+}
+
+.end-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-text {
+    text-align: center
+}

@@ -1,0 +1,70 @@
+.custom-navbar {
+    background-color: #14191f;
+    height: 6vh;
+}
+
+
+.circle {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #29333d;
+    border-radius: 50%;
+    background-color: transparent;
+    text-align: center;
+}
+
+span.middle {
+    width: 1vw;
+}
+span.small {
+    width: 0.4vw;
+}
+span.left-middle {
+    width: 10vw;
+}
+
+.sign-button {
+    display: none;
+    padding-right: 8px;
+}
+
+.sign-icon {
+    display: inline-block;
+}
+
+
+.search-input {
+    display: none;
+}
+
+.search-icon {
+    display: inline-block;
+    width: 10vw;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+@media (min-width: 500px) {
+    span.left-middle {
+        width: 0;
+    }
+
+    .search-input {
+        display: inline-block; /* Показать поле поиска на больших экранах */
+    }
+
+    .search-icon {
+        display: none; /* Скрыть иконку на больших экранах */
+    }
+
+}
+
+@media (min-width: 768px) {
+    .sign-button {
+        display: inline-block;
+    }
+    
+    .sign-icon {
+        display: none;
+    }
+}
