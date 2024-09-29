@@ -1,8 +1,11 @@
 import pandas as pd
-import numpy as np
-import pyspark.pandas as ps
-from pyspark.sql import SparkSession
+
+from src.settings import settings
+import rectools
+from lightfm import LightFM
 
 
-spark = SparkSession.builder.getOrCreate()
+videos = pd.read_parquet(settings.VIDEOS_DATASET_PATH)
+interactions = pd.read_parquet(settings.INTERACTIONS_DATASET_PATH)
 
+dataset=rectools.dataset.dataset.Dataset.construct(interactions)

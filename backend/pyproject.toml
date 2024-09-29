@@ -9,8 +9,9 @@ dependencies = [
     "pydantic-settings>=2.5.2",
     "fastapi[standard]>=0.115.0",
     "pydantic>=2.9.2",
-    "pyspark[pandas_on_spark]>=3.5.3",
+    # "pyspark[pandas_on_spark]>=3.5.3",
     "rectools>=0.8.0",
+    "pandas>=2.2.3",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

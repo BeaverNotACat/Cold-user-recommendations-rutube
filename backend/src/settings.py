@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     """
     model_config = SettingsConfigDict(env_file=".env")
 
+    VIDEOS_DATASET_PATH: str
+    INTERACTIONS_DATASET_PATH: str
 
 
 settings = Settings()  # type: ignore
