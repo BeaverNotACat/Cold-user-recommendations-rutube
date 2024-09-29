@@ -12,26 +12,24 @@ const Body = () => {
     const [data, setData] = useState(new Map())
     const [currentPage, setCurrentPage] = useState(1)
     const [coldUser, setcoldUser] = useState(true)
-    const [fpHash, setFpHash] = React.useState('');
+    // const [fpHash, setFpHash] = React.useState('');
+
+    async function getFpHash() {
+        const fp = await FingerprintJS.load();
+        const { visitorId } = await fp.get();
+        return visitorId;
+    }
 
     useEffect(() => {
-        const setFp = async () => {
-          const fp = await FingerprintJS.load();
-    
-          const { visitorId } = await fp.get();
-    
-          setFpHash(visitorId);
-        };
-    
-        setFp();
-      }, []);
-
-    useEffect(() => {
-        setData(new Map())
-        fetch(generateRequest(fpHash, data))
-        .then((response) => response.json())
-        // .then((json) => {console.log(json)})
-        .then((json) => setInputData(parseResponse(json)))
+        getFpHash()
+        .then((fp) => {
+            var payload = new Map(data);
+            fetch(generateRequest(fp, payload))
+            .then((response) => response.json())
+            // .then((json) => {console.log(json)})
+            .then((json) => setInputData(parseResponse(json)))
+        })
+        setData(new Map());
       }, [currentPage]);
 
 
@@ -58,7 +56,9 @@ const Body = () => {
     };
 
     var listOfId = Array(0);
+    console.log("inputData1", inputData)
     inputData.forEach((value, key) => listOfId.push(key))
+    console.log("inputData2", inputData)
     if (coldUser) {
         return (
             <div>
@@ -69,7 +69,9 @@ const Body = () => {
                     ))}
                 </div>
                 <div className='btn-submit-outer'>
-                        <button className='btn btn-primary btn-submit-inner' onClick={submit}>Продолжить</button>
+                        <button className='btn btn-primary btn-submit-inner' onClick={submit}>
+                            <p className='btn-submit-text'>Продолжить</p>
+                        </button>
                 </div>
             </div>
         )

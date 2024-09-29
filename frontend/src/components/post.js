@@ -40,6 +40,7 @@ const SuccessButton = ({ click, id, clicked }) => {
 
 
 const Post = ({ id, value, clicked, click }) => {
+    console.log("value", value)
     return (
         <div className="card bg-base-100 w-96 shadow-xl post">
             <figure>
@@ -50,9 +51,9 @@ const Post = ({ id, value, clicked, click }) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{value[0]}</h2>
-                <p>{value}</p>
+                <p>{value[1]}</p>
+                <span className='small'></span>
                 <div className="card-actions justify-end">
-
                 <ErrorButton click={click} id={id} clicked={clicked}/>
                 <SuccessButton click={click} id={id} clicked={clicked}/>
 

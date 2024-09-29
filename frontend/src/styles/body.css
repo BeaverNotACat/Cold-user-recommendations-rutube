@@ -39,4 +39,14 @@
 .btn-submit-inner {
     margin: auto;
     display:block;
+    height: 4vh;
+    width: 10vw;
+}
+
+.btn-submit-text {
+    font-size: x-large;
+}
+
+span.small {
+    height: 2vh;
 }
