@@ -12,6 +12,7 @@ dependencies = [
     # "pyspark[pandas_on_spark]>=3.5.3",
     "rectools>=0.8.0",
     "pandas>=2.2.3",
+    "lightfm>=1.17"
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
