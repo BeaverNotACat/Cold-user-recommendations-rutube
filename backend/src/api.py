@@ -1,15 +1,16 @@
 from uuid import uuid4
 
-from fastapi import APIRouter, Response
+from fastapi import APIRouter
 
 from src.schemas import RecommendInput, RecommendOutput
+from src.service import model
 
 
 router = APIRouter()
 
 
 @router.post("/predict", response_model=RecommendOutput)
-async def healthcheck(reactions: RecommendInput):
+async def rocmmend_videos(reactions: RecommendInput):
     return [ 
         {
             "videoId": uuid4(),

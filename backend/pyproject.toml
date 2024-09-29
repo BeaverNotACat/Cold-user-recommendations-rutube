@@ -7,13 +7,10 @@ authors = [
 ]
 dependencies = [
     "pydantic-settings>=2.5.2",
-    "alembic>=1.13.3",
-    "psycopg2-binary>=2.9.9",
     "fastapi[standard]>=0.115.0",
-    "aioboto3>=13.1.1",
     "pydantic>=2.9.2",
-    "aiopg>=1.4.0",
-    "pypika>=0.48.9",
+    "pyspark[pandas_on_spark]>=3.5.3",
+    "rectools>=0.8.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

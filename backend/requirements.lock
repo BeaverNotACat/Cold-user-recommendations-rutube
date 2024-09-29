@@ -10,40 +10,14 @@
 #   universal: false
 
 -e file:.
-aioboto3==13.1.1
-    # via backend
-aiobotocore==2.13.1
-    # via aioboto3
-aiofiles==24.1.0
-    # via aioboto3
-aiohappyeyeballs==2.4.2
-    # via aiohttp
-aiohttp==3.10.7
-    # via aiobotocore
-aioitertools==0.12.0
-    # via aiobotocore
-aiopg==1.4.0
-    # via backend
-aiosignal==1.3.1
-    # via aiohttp
-alembic==1.13.3
-    # via backend
 annotated-types==0.7.0
     # via pydantic
 anyio==4.6.0
     # via httpx
     # via starlette
     # via watchfiles
-async-timeout==4.0.3
-    # via aiopg
-attrs==24.2.0
-    # via aiohttp
-boto3==1.34.131
-    # via aiobotocore
-botocore==1.34.131
-    # via aiobotocore
-    # via boto3
-    # via s3transfer
+attrs==23.2.0
+    # via rectools
 certifi==2024.8.30
     # via httpcore
     # via httpx
@@ -58,11 +32,6 @@ fastapi==0.115.0
     # via backend
 fastapi-cli==0.0.5
     # via fastapi
-frozenlist==1.4.1
-    # via aiohttp
-    # via aiosignal
-greenlet==3.1.1
-    # via sqlalchemy
 h11==0.14.0
     # via httpcore
     # via uvicorn
@@ -76,27 +45,30 @@ idna==3.10
     # via anyio
     # via email-validator
     # via httpx
-    # via yarl
+implicit==0.7.2
+    # via rectools
 jinja2==3.1.4
     # via fastapi
-jmespath==1.0.1
-    # via boto3
-    # via botocore
-mako==1.3.5
-    # via alembic
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.5
     # via jinja2
-    # via mako
 mdurl==0.1.2
     # via markdown-it-py
-multidict==6.1.0
-    # via aiohttp
-    # via yarl
-psycopg2-binary==2.9.9
-    # via aiopg
-    # via backend
+numpy==1.26.4
+    # via implicit
+    # via pandas
+    # via pyarrow
+    # via pyspark
+    # via rectools
+    # via scipy
+pandas==2.2.3
+    # via pyspark
+    # via rectools
+py4j==0.10.9.7
+    # via pyspark
+pyarrow==17.0.0
+    # via pyspark
 pydantic==2.9.2
     # via backend
     # via fastapi
@@ -107,21 +79,26 @@ pydantic-settings==2.5.2
     # via backend
 pygments==2.18.0
     # via rich
-pypika==0.48.9
+pyspark==3.5.3
     # via backend
 python-dateutil==2.9.0.post0
-    # via botocore
+    # via pandas
 python-dotenv==1.0.1
     # via pydantic-settings
     # via uvicorn
 python-multipart==0.0.11
     # via fastapi
+pytz==2024.2
+    # via pandas
 pyyaml==6.0.2
     # via uvicorn
+rectools==0.8.0
+    # via backend
 rich==13.8.1
     # via typer
-s3transfer==0.10.2
-    # via boto3
+scipy==1.12.0
+    # via implicit
+    # via rectools
 shellingham==1.5.4
     # via typer
 six==1.16.0
@@ -129,21 +106,25 @@ six==1.16.0
 sniffio==1.3.1
     # via anyio
     # via httpx
-sqlalchemy==2.0.35
-    # via alembic
 starlette==0.38.6
     # via fastapi
+threadpoolctl==3.5.0
+    # via implicit
+tqdm==4.66.5
+    # via implicit
+    # via rectools
+typeguard==4.3.0
+    # via rectools
 typer==0.12.5
     # via fastapi-cli
 typing-extensions==4.12.2
-    # via alembic
     # via fastapi
     # via pydantic
     # via pydantic-core
-    # via sqlalchemy
+    # via typeguard
     # via typer
-urllib3==2.2.3
-    # via botocore
+tzdata==2024.2
+    # via pandas
 uvicorn==0.31.0
     # via fastapi
     # via fastapi-cli
@@ -153,7 +134,3 @@ watchfiles==0.24.0
     # via uvicorn
 websockets==13.1
     # via uvicorn
-wrapt==1.16.0
-    # via aiobotocore
-yarl==1.13.1
-    # via aiohttp
